@@ -12,7 +12,7 @@
 ## 역자 깃허브에서는 장별 깃허브를 독립적으로 구성해 제공합니다. 원서 깃허브와도 포크되어 있습니다.
 - 원서 깃허브 주소(스프링 1 버전) : https://github.com/carnellj/native_cloud_apps <br/>
 - 역자 깃허브 주소 : https://github.com/klimtever/   <br/>
-(역자 깃허브 역시 장별 구성되어 있습니다. 예를 들어 1장의 경우 https://github.com/klimtever/spmia-chapter1)
+(역자 깃허브는 장마다 개별 저장소로 구성되어 있습니다. 예를 들어 1장의 경우 https://github.com/klimtever/spmia-chapter1)
 
 ## 전체 실습 흐름
 
