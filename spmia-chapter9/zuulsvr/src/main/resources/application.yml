@@ -1,0 +1,61 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  # Add the "X-Application-Context" HTTP header in each response.
+  server:
+    add-application-context-header: true
+
+# spring:
+#   application:
+#     name: zuulservice
+#   profiles:
+#     active:
+#       default
+spring:
+  zipkin:
+     baseUrl:  localhost:9411
+  # cloud:
+  #   config:
+  #     enabled: true
+
+server:
+  port: 5555
+
+  #Setting logging levels
+logging:
+    level:
+      com.netflix: WARN
+      org.springframework.web: WARN
+      com.thoughtmechanix: DEBUG
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+        defaultZone: http://localhost:8761/eureka/
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 5000
+
+licensingservice:
+  ribbon:
+    ReadTimeout: 4000
+#
+#
+#  debug:
+#    request: true
+#
+#zuul:
+#  prefix:  /api
+#  routes:
+#    organizationservice: /organization/**
+#    licensingservice: /licensing/**

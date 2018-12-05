@@ -1,0 +1,11 @@
+zuul.ignored-services: "orgservice-new"
+zuul.prefix:  /api
+zuul.routes.organizationservice: /organization/**
+zuul.routes.licensingservice: /licensing/**
+zuul.routes.authenticationservice: /auth/**
+zuul.sensitiveHeaders: Authorization
+zuul.debug.request: true
+#hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 2
+#hystrix.command.licensingservice.execution.isolation.thread.timeoutInMilliseconds: 2
+#licensingservice.ribbon.ReadTimeout: 2
+signing.key: "345345fsdfsf5345"

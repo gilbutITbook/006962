@@ -1,0 +1,1203 @@
+{
+	"info": {
+		"_postman_id": "a5a04b62-9d68-4371-8c96-fcb410d2e82d",
+		"name": "spmia-example-2.0",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Chap01",
+			"item": [
+				{
+					"name": "GET /hello/john/carnell",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8080/hello/john/carnell",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"hello",
+								"john",
+								"carnell"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Chap02",
+			"item": [
+				{
+					"name": "GET license /v1/organizations",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8080/v1/organizations/e254f8c-c442-4ebe-a82a-e2fc1d1ff78a/licenses/f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"organizations",
+								"e254f8c-c442-4ebe-a82a-e2fc1d1ff78a",
+								"licenses",
+								"f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /actuator/health",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8080/actuator/health",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"actuator",
+								"health"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Chap03",
+			"item": [
+				{
+					"name": "GET /licensingservice/dev",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8888/licensingservice/dev",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"licensingservice",
+								"dev"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /licensingservice/default",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8888/licensingservice/default",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"licensingservice",
+								"default"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /actuator/env",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8080/actuator/env",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"actuator",
+								"env"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GET /actuator/env",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "http://localhost:8080/actuator/env",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"actuator",
+										"env"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/vnd.spring-boot.actuator.v2+json;charset=UTF-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 27 Oct 2018 11:17:26 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"name": "Transfer-Encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Tue Jan 19 2038 12:14:07 GMT+0900 (KST)",
+									"httpOnly": true,
+									"domain": "localhost",
+									"path": "/",
+									"secure": false,
+									"value": "D3C44CFB8DD331E9548379898425B86D",
+									"key": "JSESSIONID"
+								}
+							],
+							"body": "{\"activeProfiles\":[\"dev\"],\"propertySources\":[{\"name\":\"server.ports\",\"properties\":{\"local.server.port\":{\"value\":8080}}},{\"name\":\"decrypted\",\"properties\":{\"spring.datasource.password\":{\"value\":\"******\"}}},{\"name\":\"configService:configClient\",\"properties\":{\"config.client.version\":{\"value\":\"a31111e65ce3b29a875bbbf8119aefcb9f28c0ff\"}}},{\"name\":\"configService:https://github.com/klimtever/config-repo//licensingservice/licensingservice-dev.yml\",\"properties\":{\"example.property\":{\"value\":\"I AM IN THE DEV\"},\"spring.jpa.database\":{\"value\":\"POSTGRESQL\"},\"spring.datasource.platform\":{\"value\":\"postgres\"},\"spring.jpa.show-sql\":{\"value\":\"true\"},\"spring.database.driverClassName\":{\"value\":\"org.postgresql.Driver\"},\"spring.datasource.url\":{\"value\":\"jdbc:postgresql://database:5432/eagle_eye_dev\"},\"spring.datasource.username\":{\"value\":\"postgres_dev\"},\"spring.datasource.password\":{\"value\":\"******\"},\"spring.datasource.testWhileIdle\":{\"value\":\"true\"},\"spring.datasource.validationQuery\":{\"value\":\"SELECT 1\"},\"spring.jpa.properties.hibernate.dialect\":{\"value\":\"org.hibernate.dialect.PostgreSQLDialect\"},\"spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation\":{\"value\":\"true\"},\"spring.jpa.properties.hibernate.temp.use_jdbc_metadata_defaults\":{\"value\":\"false\"},\"spring.jpa.hibernate.ddl-auto\":{\"value\":\"create-drop\"},\"redis.server\":{\"value\":\"redis\"},\"redis.port\":{\"value\":\"6379\"},\"signing.key\":{\"value\":\"******\"}}},{\"name\":\"configService:https://github.com/klimtever/config-repo//licensingservice/licensingservice.yml\",\"properties\":{\"example.property\":{\"value\":\"I AM IN THE DEFAULT\"},\"spring.jpa.database\":{\"value\":\"POSTGRESQL\"},\"spring.datasource.platform\":{\"value\":\"postgres\"},\"spring.jpa.show-sql\":{\"value\":\"true\"},\"spring.database.driverClassName\":{\"value\":\"org.postgresql.Driver\"},\"spring.datasource.url\":{\"value\":\"jdbc:postgresql://database:5432/eagle_eye_local\"},\"spring.datasource.username\":{\"value\":\"postgres\"},\"spring.datasource.password\":{\"value\":\"******\"},\"spring.datasource.testWhileIdle\":{\"value\":\"true\"},\"spring.datasource.validationQuery\":{\"value\":\"SELECT 1\"},\"spring.jpa.properties.hibernate.dialect\":{\"value\":\"org.hibernate.dialect.PostgreSQLDialect\"},\"spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation\":{\"value\":\"true\"},\"spring.jpa.properties.hibernate.temp.use_jdbc_metadata_defaults\":{\"value\":\"false\"},\"spring.jpa.hibernate.ddl-auto\":{\"value\":\"create-drop\"},\"redis.server\":{\"value\":\"redis\"},\"redis.port\":{\"value\":\"6379\"},\"signing.key\":{\"value\":\"******\"}}},{\"name\":\"servletContextInitParams\",\"properties\":{}},{\"name\":\"systemProperties\",\"properties\":{\"java.runtime.name\":{\"value\":\"OpenJDK Runtime Environment\"},\"java.protocol.handler.pkgs\":{\"value\":\"org.springframework.boot.loader\"},\"sun.boot.library.path\":{\"value\":\"/usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64\"},\"java.vm.version\":{\"value\":\"25.181-b13\"},\"java.vm.vendor\":{\"value\":\"Oracle Corporation\"},\"java.vendor.url\":{\"value\":\"http://java.oracle.com/\"},\"path.separator\":{\"value\":\":\"},\"java.vm.name\":{\"value\":\"OpenJDK 64-Bit Server VM\"},\"file.encoding.pkg\":{\"value\":\"sun.io\"},\"user.country\":{\"value\":\"US\"},\"sun.java.launcher\":{\"value\":\"SUN_STANDARD\"},\"sun.os.patch.level\":{\"value\":\"unknown\"},\"PID\":{\"value\":\"26\"},\"java.vm.specification.name\":{\"value\":\"Java Virtual Machine Specification\"},\"user.dir\":{\"value\":\"/\"},\"java.runtime.version\":{\"value\":\"1.8.0_181-b13\"},\"java.awt.graphicsenv\":{\"value\":\"sun.awt.X11GraphicsEnvironment\"},\"java.endorsed.dirs\":{\"value\":\"/usr/lib/jvm/java-1.8-openjdk/jre/lib/endorsed\"},\"os.arch\":{\"value\":\"amd64\"},\"spring.profiles.active\":{\"value\":\"dev\"},\"java.io.tmpdir\":{\"value\":\"/tmp\"},\"line.separator\":{\"value\":\"\\n\"},\"java.vm.specification.vendor\":{\"value\":\"Oracle Corporation\"},\"os.name\":{\"value\":\"Linux\"},\"sun.jnu.encoding\":{\"value\":\"UTF-8\"},\"spring.beaninfo.ignore\":{\"value\":\"true\"},\"java.library.path\":{\"value\":\"/usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/server:/usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64:/usr/lib/jvm/java-1.8-openjdk/jre/../lib/amd64:/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib\"},\"java.specification.name\":{\"value\":\"Java Platform API Specification\"},\"java.class.version\":{\"value\":\"52.0\"},\"sun.management.compiler\":{\"value\":\"HotSpot 64-Bit Tiered Compilers\"},\"os.version\":{\"value\":\"4.9.93-linuxkit-aufs\"},\"user.home\":{\"value\":\"/root\"},\"catalina.useNaming\":{\"value\":\"false\"},\"user.timezone\":{\"value\":\"GMT\"},\"java.awt.printerjob\":{\"value\":\"sun.print.PSPrinterJob\"},\"file.encoding\":{\"value\":\"UTF-8\"},\"java.specification.version\":{\"value\":\"1.8\"},\"catalina.home\":{\"value\":\"/tmp/tomcat.1405902243607603049.8080\"},\"java.class.path\":{\"value\":\"/usr/local/licensingservice/licensing-service-0.0.1-SNAPSHOT.jar\"},\"user.name\":{\"value\":\"root\"},\"java.vm.specification.version\":{\"value\":\"1.8\"},\"sun.java.command\":{\"value\":\"******\"},\"java.home\":{\"value\":\"/usr/lib/jvm/java-1.8-openjdk/jre\"},\"sun.arch.data.model\":{\"value\":\"64\"},\"user.language\":{\"value\":\"en\"},\"java.specification.vendor\":{\"value\":\"Oracle Corporation\"},\"awt.toolkit\":{\"value\":\"sun.awt.X11.XToolkit\"},\"java.vm.info\":{\"value\":\"mixed mode\"},\"java.version\":{\"value\":\"1.8.0_181\"},\"java.ext.dirs\":{\"value\":\"/usr/lib/jvm/java-1.8-openjdk/jre/lib/ext:/usr/java/packages/lib/ext\"},\"sun.boot.class.path\":{\"value\":\"/usr/lib/jvm/java-1.8-openjdk/jre/lib/resources.jar:/usr/lib/jvm/java-1.8-openjdk/jre/lib/rt.jar:/usr/lib/jvm/java-1.8-openjdk/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-1.8-openjdk/jre/lib/jsse.jar:/usr/lib/jvm/java-1.8-openjdk/jre/lib/jce.jar:/usr/lib/jvm/java-1.8-openjdk/jre/lib/charsets.jar:/usr/lib/jvm/java-1.8-openjdk/jre/lib/jfr.jar:/usr/lib/jvm/java-1.8-openjdk/jre/classes\"},\"java.awt.headless\":{\"value\":\"true\"},\"java.vendor\":{\"value\":\"Oracle Corporation\"},\"catalina.base\":{\"value\":\"/tmp/tomcat.1405902243607603049.8080\"},\"com.zaxxer.hikari.pool_number\":{\"value\":\"1\"},\"file.separator\":{\"value\":\"/\"},\"java.vendor.url.bug\":{\"value\":\"http://bugreport.sun.com/bugreport/\"},\"sun.io.unicode.encoding\":{\"value\":\"UnicodeLittle\"},\"sun.cpu.endian\":{\"value\":\"little\"},\"spring.cloud.config.uri\":{\"value\":\"http://configserver:8888\"},\"sun.cpu.isalist\":{\"value\":\"\"}}},{\"name\":\"systemEnvironment\",\"properties\":{\"PATH\":{\"value\":\"/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/java-1.8-openjdk/jre/bin:/usr/lib/jvm/java-1.8-openjdk/bin\",\"origin\":\"System Environment Property \\\"PATH\\\"\"},\"JAVA_HOME\":{\"value\":\"/usr/lib/jvm/java-1.8-openjdk\",\"origin\":\"System Environment Property \\\"JAVA_HOME\\\"\"},\"CONFIGSERVER_PORT\":{\"value\":\"8888\",\"origin\":\"System Environment Property \\\"CONFIGSERVER_PORT\\\"\"},\"DATABASESERVER_PORT\":{\"value\":\"5432\",\"origin\":\"System Environment Property \\\"DATABASESERVER_PORT\\\"\"},\"ENCRYPT_KEY\":{\"value\":\"******\",\"origin\":\"System Environment Property \\\"ENCRYPT_KEY\\\"\"},\"LANG\":{\"value\":\"C.UTF-8\",\"origin\":\"System Environment Property \\\"LANG\\\"\"},\"PROFILE\":{\"value\":\"dev\",\"origin\":\"System Environment Property \\\"PROFILE\\\"\"},\"HOSTNAME\":{\"value\":\"158e8327eedc\",\"origin\":\"System Environment Property \\\"HOSTNAME\\\"\"},\"JAVA_ALPINE_VERSION\":{\"value\":\"8.181.13-r0\",\"origin\":\"System Environment Property \\\"JAVA_ALPINE_VERSION\\\"\"},\"LD_LIBRARY_PATH\":{\"value\":\"/usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/server:/usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64:/usr/lib/jvm/java-1.8-openjdk/jre/../lib/amd64\",\"origin\":\"System Environment Property \\\"LD_LIBRARY_PATH\\\"\"},\"CONFIGSERVER_URI\":{\"value\":\"http://configserver:8888\",\"origin\":\"System Environment Property \\\"CONFIGSERVER_URI\\\"\"},\"PWD\":{\"value\":\"/\",\"origin\":\"System Environment Property \\\"PWD\\\"\"},\"JAVA_VERSION\":{\"value\":\"8u181\",\"origin\":\"System Environment Property \\\"JAVA_VERSION\\\"\"},\"HOME\":{\"value\":\"/root\",\"origin\":\"System Environment Property \\\"HOME\\\"\"},\"SHLVL\":{\"value\":\"2\",\"origin\":\"System Environment Property \\\"SHLVL\\\"\"}}},{\"name\":\"applicationConfig: [classpath:/application.yml]\",\"properties\":{\"management.endpoints.web.exposure.include\":{\"value\":\"*\",\"origin\":\"class path resource [application.yml]:25:18\"}}},{\"name\":\"springCloudClientHostInfo\",\"properties\":{\"spring.cloud.client.hostname\":{\"value\":\"158e8327eedc\"},\"spring.cloud.client.ip-address\":{\"value\":\"172.31.0.3\"}}},{\"name\":\"applicationConfig: [classpath:/bootstrap.yml]\",\"properties\":{\"spring.application.name\":{\"value\":\"licensingservice\",\"origin\":\"class path resource [bootstrap.yml]:11:11\"},\"spring.profiles.active\":{\"value\":\"default\",\"origin\":\"class path resource [bootstrap.yml]:14:7\"},\"spring.cloud.config.uri\":{\"value\":\"http://localhost:8888\",\"origin\":\"class path resource [bootstrap.yml]:17:12\"}}},{\"name\":\"defaultProperties\",\"properties\":{}}]}"
+						}
+					]
+				},
+				{
+					"name": "GET /acutator/refresh",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8080/actuator/refresh",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"actuator",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /encrypt",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "p0stgr@s"
+						},
+						"url": {
+							"raw": "http://localhost:8888/encrypt",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"encrypt"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /decrypt",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "ac680ff50af59fd7ca6dad403401a7bed187aa92537affe593364e5d93c9467d"
+						},
+						"url": {
+							"raw": "http://localhost:8888/decrypt",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"decrypt"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Chap04",
+			"item": [
+				{
+					"name": "GET /eureka/apps",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8761/eureka/apps",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8761",
+							"path": [
+								"eureka",
+								"apps"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /eureka/apps/organizationservice",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8761/eureka/apps/organizationservice",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8761",
+							"path": [
+								"eureka",
+								"apps",
+								"organizationservice"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /eureka/apps/configserver",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8761/eureka/apps/configserver",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8761",
+							"path": [
+								"eureka",
+								"apps",
+								"configserver"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /eureka/apps/licensingservice",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8761/eureka/apps/licensingservice",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8761",
+							"path": [
+								"eureka",
+								"apps",
+								"licensingservice"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Chap05",
+			"item": [
+				{
+					"name": "GET license by organization",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8080/v1/organizations/e254f8c-c442-4ebe-a82a-e2fc1d1ff78a/licenses/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"organizations",
+								"e254f8c-c442-4ebe-a82a-e2fc1d1ff78a",
+								"licenses",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Chap06",
+			"item": [
+				{
+					"name": "Zuul /routes",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "393780e4-ecca-4fe4-958d-1b0ad7ce3f0f",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:5555/actuator/routes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"actuator",
+								"routes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Zuul /routes/details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:5555/actuator/routes/details",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"actuator",
+								"routes",
+								"details"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET license and organization via Zuul",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:5555/api/licensing/v1/organizations/e254f8c-c442-4ebe-a82a-e2fc1d1ff78a/licenses/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"licensing",
+								"v1",
+								"organizations",
+								"e254f8c-c442-4ebe-a82a-e2fc1d1ff78a",
+								"licenses",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET an organization via Zuul",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:5555/api/organization/v1/organizations/e254f8c-c442-4ebe-a82a-e2fc1d1ff78a/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"organization",
+								"v1",
+								"organizations",
+								"e254f8c-c442-4ebe-a82a-e2fc1d1ff78a",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET licenses with an organization via license",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8080/v1/organizations/e254f8c-c442-4ebe-a82a-e2fc1d1ff78a/licenses/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"organizations",
+								"e254f8c-c442-4ebe-a82a-e2fc1d1ff78a",
+								"licenses",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Zuul /refresh",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "393780e4-ecca-4fe4-958d-1b0ad7ce3f0f",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:5555/actuator/refresh",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"actuator",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET organization wih a licenses",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:5555/api/licensing/v1/organizations/e254f8c-c442-4ebe-a82a-e2fc1d1ff78a/licenses/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"licensing",
+								"v1",
+								"organizations",
+								"e254f8c-c442-4ebe-a82a-e2fc1d1ff78a",
+								"licenses",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Chap07",
+			"item": [
+				{
+					"name": "Figure 7-2 ROLE_USER POST /auth/oauth/token",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "thisissecret",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "eagleeye",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "webclient",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "john.carnell",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8901/auth/oauth/token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8901",
+							"path": [
+								"auth",
+								"oauth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Figure 7-2-b ROLE_ADMIN POST /auth/oauth/token",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "thisissecret",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "eagleeye",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "webclient",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "illiam.woodward",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8901/auth/oauth/token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8901",
+							"path": [
+								"auth",
+								"oauth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Figure 7-5 GET /auth/user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer e32035e3-55cf-4077-971b-de79c9e27bbd"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8901/auth/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8901",
+							"path": [
+								"auth",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET license and organization",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:5555/licensing/v1/organizations/e254f8c-c442-4ebe-a82a-e2fc1d1ff78a/licenses/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"licensing",
+								"v1",
+								"organizations",
+								"e254f8c-c442-4ebe-a82a-e2fc1d1ff78a",
+								"licenses",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Figure 7-6 GET /v1/organizations/{org_id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8085/v1/organizations/e254f8c-c442-4ebe-a82a-e2fc1d1ff78a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"v1",
+								"organizations",
+								"e254f8c-c442-4ebe-a82a-e2fc1d1ff78a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Figure 7-6-b DELETE /v1/organizations/{org_id}",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8085/v1/organizations/e254f8c-c442-4ebe-a82a-e2fc1d1ff78a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"v1",
+								"organizations",
+								"e254f8c-c442-4ebe-a82a-e2fc1d1ff78a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Figure 7-9 Retrieve JWT token by POST /auth/oauth/token",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "thisissecret",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "eagleeye",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "webclient",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "john.carnell",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8901/auth/oauth/token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8901",
+							"path": [
+								"auth",
+								"oauth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET licenses with an organization via zuul",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "511c9871-123b-4bc5-8228-160eb9772cb2",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:5555/api/licensing/v1/organizations/e254f8c-c442-4ebe-a82a-e2fc1d1ff78a/licenses/f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"licensing",
+								"v1",
+								"organizations",
+								"e254f8c-c442-4ebe-a82a-e2fc1d1ff78a",
+								"licenses",
+								"f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET licenses and organization via Zuul",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "b3652778-5b0e-478c-b4f0-1a756a65bd08",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 393780e4-ecca-4fe4-958d-1b0ad7ce3f0f"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:5555/api/licensing/v1/organizations/e254f8c-c442-4ebe-a82a-e2fc1d1ff78a/licenses/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"licensing",
+								"v1",
+								"organizations",
+								"e254f8c-c442-4ebe-a82a-e2fc1d1ff78a",
+								"licenses",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Figure 7-6 GET /v1/organizations/{org_id} via zuul",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "b3652778-5b0e-478c-b4f0-1a756a65bd08",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer e32035e3-55cf-4077-971b-de79c9e27bbd"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:5555/api/organizationservice/v1/organizations/e254f8c-c442-4ebe-a82a-e2fc1d1ff78a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"organizationservice",
+								"v1",
+								"organizations",
+								"e254f8c-c442-4ebe-a82a-e2fc1d1ff78a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /auth/validate/{token}",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer e32035e3-55cf-4077-971b-de79c9e27bbd"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8901/auth/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8901",
+							"path": [
+								"auth",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "jwt",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Chap08",
+			"item": [
+				{
+					"name": "Code 8-10 GET license via zuul",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Chap09",
+			"item": [
+				{
+					"name": "Get license with organziation id via zuul",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:5555/api/licensing/v1/organizations/e254f8c-c442-4ebe-a82a-e2fc1d1ff78a/licenses/f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"licensing",
+								"v1",
+								"organizations",
+								"e254f8c-c442-4ebe-a82a-e2fc1d1ff78a",
+								"licenses",
+								"f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get license with organziation-2 id via zuul",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:5555/api/licensing/v1/organizations/e254f8c-c442-4ebe-a82a-e2fc1d1ff78a/licenses/f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"licensing",
+								"v1",
+								"organizations",
+								"e254f8c-c442-4ebe-a82a-e2fc1d1ff78a",
+								"licenses",
+								"f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a organziation id via zuul",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:5555/api/licensing/v1/organizations/e254f8c-c442-4ebe-a82a-e2fc1d1ff78a/licenses/f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"licensing",
+								"v1",
+								"organizations",
+								"e254f8c-c442-4ebe-a82a-e2fc1d1ff78a",
+								"licenses",
+								"f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete an organziation id via zuul",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:5555/api/organization/v1/organizations/e254f8c-c442-4ebe-a82a-e2fc1d1ff78a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"organization",
+								"v1",
+								"organizations",
+								"e254f8c-c442-4ebe-a82a-e2fc1d1ff78a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Chap10",
+			"item": [
+				{
+					"name": "TEST",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://ec2-13-124-20-126.ap-northeast-2.compute.amazonaws.com:5555/actuator/health",
+							"protocol": "http",
+							"host": [
+								"ec2-13-124-20-126",
+								"ap-northeast-2",
+								"compute",
+								"amazonaws",
+								"com"
+							],
+							"port": "5555",
+							"path": [
+								"actuator",
+								"health"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

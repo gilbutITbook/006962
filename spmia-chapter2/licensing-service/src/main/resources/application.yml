@@ -1,0 +1,3 @@
+management.endpoint.health.show-details: "always"
+#Enable disk space health check.
+management.endpoint.health.diskspace.enabled: "true"
