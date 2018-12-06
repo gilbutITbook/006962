@@ -13,7 +13,10 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "http://localhost:8080/hello/john/carnell",
 							"protocol": "http",
@@ -43,7 +46,10 @@
 						},
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "http://localhost:8080/v1/organizations/e254f8c-c442-4ebe-a82a-e2fc1d1ff78a/licenses/f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a",
 							"protocol": "http",
@@ -70,7 +76,10 @@
 						},
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "http://localhost:8080/actuator/health",
 							"protocol": "http",
@@ -96,7 +105,10 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "http://localhost:8888/licensingservice/dev",
 							"protocol": "http",
@@ -117,7 +129,10 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "http://localhost:8888/licensingservice/default",
 							"protocol": "http",
@@ -141,7 +156,10 @@
 						},
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "http://localhost:8080/actuator/env",
 							"protocol": "http",
@@ -161,7 +179,10 @@
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
-								"body": {},
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
 								"url": {
 									"raw": "http://localhost:8080/actuator/env",
 									"protocol": "http",
@@ -293,7 +314,10 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "http://localhost:8761/eureka/apps",
 							"protocol": "http",
@@ -314,7 +338,10 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "http://localhost:8761/eureka/apps/organizationservice",
 							"protocol": "http",
@@ -336,7 +363,10 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "http://localhost:8761/eureka/apps/configserver",
 							"protocol": "http",
@@ -358,7 +388,10 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "http://localhost:8761/eureka/apps/licensingservice",
 							"protocol": "http",
@@ -381,11 +414,14 @@
 			"name": "Chap05",
 			"item": [
 				{
-					"name": "GET license by organization",
+					"name": "GET /organizations/{orgid}/licenses/",
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "http://localhost:8080/v1/organizations/e254f8c-c442-4ebe-a82a-e2fc1d1ff78a/licenses/",
 							"protocol": "http",
@@ -424,7 +460,10 @@
 						},
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "http://localhost:5555/actuator/routes",
 							"protocol": "http",
@@ -445,7 +484,10 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "http://localhost:5555/actuator/routes/details",
 							"protocol": "http",
@@ -463,14 +505,47 @@
 					"response": []
 				},
 				{
-					"name": "GET license and organization via Zuul",
+					"name": "GET /organizations/{orgid}/licenses/",
 					"request": {
 						"auth": {
 							"type": "noauth"
 						},
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/organizations/e254f8c-c442-4ebe-a82a-e2fc1d1ff78a/licenses/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"organizations",
+								"e254f8c-c442-4ebe-a82a-e2fc1d1ff78a",
+								"licenses",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /api/licensing/v1/organizations/{orgid}/licenses",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "http://localhost:5555/api/licensing/v1/organizations/e254f8c-c442-4ebe-a82a-e2fc1d1ff78a/licenses/",
 							"protocol": "http",
@@ -492,11 +567,14 @@
 					"response": []
 				},
 				{
-					"name": "GET an organization via Zuul",
+					"name": "GET /api/organization/v1/organizations/{orgid}/licenses/",
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "http://localhost:5555/api/organization/v1/organizations/e254f8c-c442-4ebe-a82a-e2fc1d1ff78a/",
 							"protocol": "http",
@@ -517,34 +595,7 @@
 					"response": []
 				},
 				{
-					"name": "GET licenses with an organization via license",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"body": {},
-						"url": {
-							"raw": "http://localhost:8080/v1/organizations/e254f8c-c442-4ebe-a82a-e2fc1d1ff78a/licenses/",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"v1",
-								"organizations",
-								"e254f8c-c442-4ebe-a82a-e2fc1d1ff78a",
-								"licenses",
-								""
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Zuul /refresh",
+					"name": "POST /refresh",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -575,7 +626,10 @@
 					"response": []
 				},
 				{
-					"name": "GET organization wih a licenses",
+					"name": "GET /api/licensing/v1/organizations/{orgid}/licenses/{licenseid}",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"auth": {
 							"type": "noauth"
@@ -584,7 +638,51 @@
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "http://localhost:5555/api/licensing/v1/organizations/e254f8c-c442-4ebe-a82a-e2fc1d1ff78a/licenses/",
+							"raw": "http://localhost:5555/api/licensing/v1/organizations/e254f8c-c442-4ebe-a82ae2fc1d1ff78a/licenses/f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"licensing",
+								"v1",
+								"organizations",
+								"e254f8c-c442-4ebe-a82ae2fc1d1ff78a",
+								"licenses",
+								"f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Figure 6-16 GET /api/licensing/v1/organizations/{orgid}/licenses/{licenseid}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvcmdhbml6YXRpb25JZCI6IjQyZDNkNGY1LTlmMzMtNDJmNC04YWNhLWI3NTE5ZDZhZjFiYiIsInVzZXJfbmFtZSI6IndpbGxpYW0ud29vZHdhcmQiLCJzY29wZSI6WyJ3ZWJjbGllbnQiXSwiZXhwIjoxNTQxNTI2MzAzLCJhdXRob3JpdGllcyI6WyJST0xFX0FETUlOIiwiUk9MRV9VU0VSIl0sImp0aSI6ImU0ZTZhYzRlLTcxM2YtNDIwMS05MTFkLTgxNjFlZThhZDI4MiIsImNsaWVudF9pZCI6ImVhZ2xlZXllIn0.KABZ-CWPV2h0pMTRHXKmY_T0mKyECszBqDQJCww9ubY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 393780e4-ecca-4fe4-958d-1b0ad7ce3f0f"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:5555/api/licensing/v1/organizations/e254f8c-c442-4ebe-a82a-e2fc1d1ff78a/licenses/f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -597,7 +695,7 @@
 								"organizations",
 								"e254f8c-c442-4ebe-a82a-e2fc1d1ff78a",
 								"licenses",
-								""
+								"f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a"
 							]
 						}
 					},
@@ -704,7 +802,7 @@
 								},
 								{
 									"key": "username",
-									"value": "illiam.woodward",
+									"value": "william.woodward",
 									"type": "text"
 								},
 								{
@@ -740,7 +838,10 @@
 								"value": "Bearer e32035e3-55cf-4077-971b-de79c9e27bbd"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "http://localhost:8901/auth/user",
 							"protocol": "http",
@@ -757,11 +858,14 @@
 					"response": []
 				},
 				{
-					"name": "GET license and organization",
+					"name": "GET /licensing/v1/organizations/{orgid}/licenses/",
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "http://localhost:5555/licensing/v1/organizations/e254f8c-c442-4ebe-a82a-e2fc1d1ff78a/licenses/",
 							"protocol": "http",
@@ -782,11 +886,14 @@
 					"response": []
 				},
 				{
-					"name": "Figure 7-6 GET /v1/organizations/{org_id}",
+					"name": "Figure 7-6 GET /organizations/{org_id}",
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "http://localhost:8085/v1/organizations/e254f8c-c442-4ebe-a82a-e2fc1d1ff78a",
 							"protocol": "http",
@@ -804,7 +911,7 @@
 					"response": []
 				},
 				{
-					"name": "Figure 7-6-b DELETE /v1/organizations/{org_id}",
+					"name": "Figure 7-6-b DELETE /organizations/{orgid}",
 					"request": {
 						"auth": {
 							"type": "noauth"
@@ -829,7 +936,7 @@
 					"response": []
 				},
 				{
-					"name": "Figure 7-9 Retrieve JWT token by POST /auth/oauth/token",
+					"name": "Figure 7-9 Create JWT token by POST /auth/oauth/token",
 					"request": {
 						"auth": {
 							"type": "basic",
@@ -890,7 +997,7 @@
 					"response": []
 				},
 				{
-					"name": "GET licenses with an organization via zuul",
+					"name": "GET /api/licensing/v1/organizations/{orgid}/licenses/{licenseid}",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -904,7 +1011,10 @@
 						},
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "http://localhost:5555/api/licensing/v1/organizations/e254f8c-c442-4ebe-a82a-e2fc1d1ff78a/licenses/f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a",
 							"protocol": "http",
@@ -926,7 +1036,7 @@
 					"response": []
 				},
 				{
-					"name": "GET licenses and organization via Zuul",
+					"name": "GET /api/licensing/v1/organizations/{orgid}/licenses/",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -945,7 +1055,10 @@
 								"value": "Bearer 393780e4-ecca-4fe4-958d-1b0ad7ce3f0f"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "http://localhost:5555/api/licensing/v1/organizations/e254f8c-c442-4ebe-a82a-e2fc1d1ff78a/licenses/",
 							"protocol": "http",
@@ -967,7 +1080,7 @@
 					"response": []
 				},
 				{
-					"name": "Figure 7-6 GET /v1/organizations/{org_id} via zuul",
+					"name": "Figure 7-6 GET /api/organizationservice/v1/organizations/{ordid}",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -986,7 +1099,10 @@
 								"value": "Bearer e32035e3-55cf-4077-971b-de79c9e27bbd"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "http://localhost:5555/api/organizationservice/v1/organizations/e254f8c-c442-4ebe-a82a-e2fc1d1ff78a",
 							"protocol": "http",
@@ -1006,7 +1122,7 @@
 					"response": []
 				},
 				{
-					"name": "GET /auth/validate/{token}",
+					"name": "GET /auth/user",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -1015,7 +1131,10 @@
 								"value": "Bearer e32035e3-55cf-4077-971b-de79c9e27bbd"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "http://localhost:8901/auth/user",
 							"protocol": "http",
@@ -1030,18 +1149,6 @@
 						}
 					},
 					"response": []
-				},
-				{
-					"name": "jwt",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {},
-						"url": {
-							"raw": ""
-						}
-					},
-					"response": []
 				}
 			]
 		},
@@ -1049,28 +1156,82 @@
 			"name": "Chap08",
 			"item": [
 				{
-					"name": "Code 8-10 GET license via zuul",
+					"name": "Code 8-10 GET /api/organization/v1/organizations/{orgid}",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [],
-						"body": {},
-						"url": {
+						"body": {
+							"mode": "raw",
 							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:5555/api/organization/v1/organizations/e254f8c-c442-4ebe-a82a-e2fc1d1ff78a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"organization",
+								"v1",
+								"organizations",
+								"e254f8c-c442-4ebe-a82a-e2fc1d1ff78a"
+							]
 						}
 					},
 					"response": []
-				}
-			]
-		},
-		{
-			"name": "Chap09",
-			"item": [
+				},
 				{
-					"name": "Get license with organziation id via zuul",
+					"name": "Code 8-10 PUT /api/organizationservice/v1/organizations/{orgid}",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"e254f8c-c442-4ebe-a82a-e2fc1d1ff78a\",\n    \"name\": \"customer-crm-co\",\n    \"contactName\": \"Mark Balster\",\n    \"contactEmail\": \"mark.balster@custcrmco.com\",\n    \"contactPhone\": \"823-555-1212\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5555/api/organizationservice/v1/organizations/e254f8c-c442-4ebe-a82a-e2fc1d1ff78a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"organizationservice",
+								"v1",
+								"organizations",
+								"e254f8c-c442-4ebe-a82a-e2fc1d1ff78a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Code 8-10 GET /api/licensing/v1/organizations/{orgid}/licenses/{licenseid}",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "http://localhost:5555/api/licensing/v1/organizations/e254f8c-c442-4ebe-a82a-e2fc1d1ff78a/licenses/f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a",
 							"protocol": "http",
@@ -1092,13 +1253,19 @@
 					"response": []
 				},
 				{
-					"name": "Get license with organziation-2 id via zuul",
+					"name": "GET /api/organization/v1/organizations/{orgid}",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
-							"raw": "http://localhost:5555/api/licensing/v1/organizations/e254f8c-c442-4ebe-a82a-e2fc1d1ff78a/licenses/f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a",
+							"raw": "http://localhost:5555/api/organization/v1/organizations/e254f8c-c442-4ebe-a82a-e2fc1d1ff78a",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1106,49 +1273,31 @@
 							"port": "5555",
 							"path": [
 								"api",
-								"licensing",
+								"organization",
 								"v1",
 								"organizations",
-								"e254f8c-c442-4ebe-a82a-e2fc1d1ff78a",
-								"licenses",
-								"f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a"
+								"e254f8c-c442-4ebe-a82a-e2fc1d1ff78a"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Get a organziation id via zuul",
+					"name": "PUT /api/organization/v1/organizations/{orgid}",
 					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {},
-						"url": {
-							"raw": "http://localhost:5555/api/licensing/v1/organizations/e254f8c-c442-4ebe-a82a-e2fc1d1ff78a/licenses/f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "5555",
-							"path": [
-								"api",
-								"licensing",
-								"v1",
-								"organizations",
-								"e254f8c-c442-4ebe-a82a-e2fc1d1ff78a",
-								"licenses",
-								"f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Delete an organziation id via zuul",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"body": {},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"e254f8c-c442-4ebe-a82a-e2fc1d1ff78a\",\n    \"name\": \"customer-crm-co\",\n    \"contactName\": \"Mark Balster\",\n    \"contactEmail\": \"mark.balster@custcrmco.com\",\n    \"contactPhone\": \"823-555-2222\"\n}"
+						},
 						"url": {
 							"raw": "http://localhost:5555/api/organization/v1/organizations/e254f8c-c442-4ebe-a82a-e2fc1d1ff78a",
 							"protocol": "http",
@@ -1170,28 +1319,140 @@
 			]
 		},
 		{
-			"name": "Chap10",
+			"name": "Chap09",
 			"item": [
 				{
-					"name": "TEST",
+					"name": "GET /api/organization/v1/organizations/{orgid}",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "http://ec2-13-124-20-126.ap-northeast-2.compute.amazonaws.com:5555/actuator/health",
+							"raw": "http://localhost:5555/api/organization/v1/organizations/e254f8c-c442-4ebe-a82a-e2fc1d1ff78a",
 							"protocol": "http",
 							"host": [
-								"ec2-13-124-20-126",
-								"ap-northeast-2",
-								"compute",
-								"amazonaws",
-								"com"
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"organization",
+								"v1",
+								"organizations",
+								"e254f8c-c442-4ebe-a82a-e2fc1d1ff78a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /api/licensing/v1/organizations/{orgid}/licenses/{licenseid}",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:5555/api/licensing/v1/organizations/e254f8c-c442-4ebe-a82a-e2fc1d1ff78a/licenses/f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"licensing",
+								"v1",
+								"organizations",
+								"e254f8c-c442-4ebe-a82a-e2fc1d1ff78a",
+								"licenses",
+								"f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE /api/organization/v1/organizations/{orgid}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:5555/api/organization/v1/organizations/e254f8c-c442-4ebe-a82a-e2fc1d1ff78a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"organization",
+								"v1",
+								"organizations",
+								"e254f8c-c442-4ebe-a82a-e2fc1d1ff78a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /organizations/{orgid}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8085/v1/organizations/e254f8c-c442-4ebe-a82a-e2fc1d1ff78a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"v1",
+								"organizations",
+								"e254f8c-c442-4ebe-a82a-e2fc1d1ff78a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Chap10",
+			"item": [
+				{
+					"name": "TEST with chapter10-platform-tests",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://13.209.17.118:5555/actuator/routes",
+							"protocol": "http",
+							"host": [
+								"13",
+								"209",
+								"17",
+								"118"
 							],
 							"port": "5555",
 							"path": [
 								"actuator",
-								"health"
+								"routes"
 							]
 						}
 					},
