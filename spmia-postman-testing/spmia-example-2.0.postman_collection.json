@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "a5a04b62-9d68-4371-8c96-fcb410d2e82d",
+		"_postman_id": "e931fb76-2287-416a-b8f7-58f8d9cd4615",
 		"name": "spmia-example-2.0",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -221,7 +221,7 @@
 							],
 							"cookie": [
 								{
-									"expires": "Tue Jan 19 2038 12:14:07 GMT+0900 (KST)",
+									"expires": "Invalid Date",
 									"httpOnly": true,
 									"domain": "localhost",
 									"path": "/",
@@ -242,7 +242,10 @@
 						},
 						"method": "POST",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "http://localhost:8080/actuator/refresh",
 							"protocol": "http",
@@ -609,7 +612,10 @@
 						},
 						"method": "POST",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "http://localhost:5555/actuator/refresh",
 							"protocol": "http",
@@ -627,16 +633,16 @@
 				},
 				{
 					"name": "GET /api/licensing/v1/organizations/{orgid}/licenses/{licenseid}",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
 						"auth": {
 							"type": "noauth"
 						},
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "http://localhost:5555/api/licensing/v1/organizations/e254f8c-c442-4ebe-a82ae2fc1d1ff78a/licenses/f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a",
 							"protocol": "http",
@@ -918,7 +924,10 @@
 						},
 						"method": "DELETE",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "http://localhost:8085/v1/organizations/e254f8c-c442-4ebe-a82a-e2fc1d1ff78a",
 							"protocol": "http",
@@ -1326,7 +1335,10 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "http://localhost:5555/api/organization/v1/organizations/e254f8c-c442-4ebe-a82a-e2fc1d1ff78a",
 							"protocol": "http",
@@ -1347,16 +1359,16 @@
 				},
 				{
 					"name": "GET /api/licensing/v1/organizations/{orgid}/licenses/{licenseid}",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
 						"auth": {
 							"type": "noauth"
 						},
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "http://localhost:5555/api/licensing/v1/organizations/e254f8c-c442-4ebe-a82a-e2fc1d1ff78a/licenses/f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a",
 							"protocol": "http",
@@ -1382,7 +1394,10 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "http://localhost:5555/api/organization/v1/organizations/e254f8c-c442-4ebe-a82a-e2fc1d1ff78a",
 							"protocol": "http",
@@ -1432,7 +1447,7 @@
 			"name": "Chap10",
 			"item": [
 				{
-					"name": "TEST with chapter10-platform-tests",
+					"name": "GET /actuator/routes",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -1441,13 +1456,13 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://13.209.17.118:5555/actuator/routes",
+							"raw": "http://13.125.174.58:5555/actuator/routes",
 							"protocol": "http",
 							"host": [
 								"13",
-								"209",
-								"17",
-								"118"
+								"125",
+								"174",
+								"58"
 							],
 							"port": "5555",
 							"path": [
@@ -1457,8 +1472,325 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "GET auth configuration",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://13.125.174.58:5555/api/configserver/authenticationservice/aws-dev",
+							"protocol": "http",
+							"host": [
+								"13",
+								"125",
+								"174",
+								"58"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"configserver",
+								"authenticationservice",
+								"aws-dev"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Figure 7-2 ROLE_USER POST /auth/oauth/token",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "thisissecret",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "eagleeye",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "webclient",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "john.carnell",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://13.125.174.58:5555/api/auth/auth/oauth/token",
+							"protocol": "http",
+							"host": [
+								"13",
+								"125",
+								"174",
+								"58"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"auth",
+								"auth",
+								"oauth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user info",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "e8b20863-60af-4adb-a663-e1de2ae08580",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer e8b20863-60af-4adb-a663-e1de2ae08580",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://13.125.174.58:5555/api/auth/auth/user",
+							"protocol": "http",
+							"host": [
+								"13",
+								"125",
+								"174",
+								"58"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"auth",
+								"auth",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get organization info with user role user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "df0322a4-e150-4408-8964-2ed58c1862d1",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://13.125.174.58:5555/api/organization/v1/organizations/e254f8c-c442-4ebe-a82a-e2fc1d1ff78a/",
+							"protocol": "http",
+							"host": [
+								"13",
+								"125",
+								"174",
+								"58"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"organization",
+								"v1",
+								"organizations",
+								"e254f8c-c442-4ebe-a82a-e2fc1d1ff78a",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Figure 7-2-b ROLE_ADMIN POST /auth/oauth/token Copy",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "thisissecret",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "eagleeye",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "webclient",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "william.woodward",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://13.125.174.58:5555/api/auth/auth/oauth/token",
+							"protocol": "http",
+							"host": [
+								"13",
+								"125",
+								"174",
+								"58"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"auth",
+								"auth",
+								"oauth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get licenses with admin role user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "dff858fa-c09c-47d3-a509-5c3e33c80482",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 3b2ef0e3-1379-47bb-a444-d02c37940c41",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://13.125.174.58:5555/api/licensing/v1/organizations/e254f8c-c442-4ebe-a82a-e2fc1d1ff78a/licenses/",
+							"protocol": "http",
+							"host": [
+								"13",
+								"125",
+								"174",
+								"58"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"licensing",
+								"v1",
+								"organizations",
+								"e254f8c-c442-4ebe-a82a-e2fc1d1ff78a",
+								"licenses",
+								""
+							]
+						}
+					},
+					"response": []
 				}
 			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "1ada2d85-9677-49df-929c-d362ec6d76ae",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "02fc8e38-019d-466e-a686-a21e202a188a",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
 		}
 	]
 }

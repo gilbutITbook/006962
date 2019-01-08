@@ -11,13 +11,15 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 
 import javax.servlet.Filter;
+import com.thoughtmechanix.organization.events.CustomChannels;
 
 
 @SpringBootApplication
 @EnableEurekaClient
 @EnableCircuitBreaker
-@EnableBinding(Source.class)
 @EnableResourceServer
+@EnableBinding(Source.class)
+// @EnableBinding(CustomChannels.class)
 public class Application {
     @Bean
     public Filter userContextFilter() {

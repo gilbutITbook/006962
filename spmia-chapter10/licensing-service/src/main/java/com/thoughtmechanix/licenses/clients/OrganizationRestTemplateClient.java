@@ -45,7 +45,7 @@ public class OrganizationRestTemplateClient {
         Organization org = checkRedisCache(organizationId);
 
         if (org!=null){
-            logger.debug("I have successfully retrieved an organization {} from the redis cache: {}", organizationId, org);
+            logger.debug("I have successfully retrieved an organization {} from the redis cache: {}.", organizationId, org);
             return org;
         }
 
@@ -53,7 +53,7 @@ public class OrganizationRestTemplateClient {
 
         ResponseEntity<Organization> restExchange =
                 restTemplate.exchange(
-                        "http://zuulservice/api/organization/v1/organizations/{organizationId}",
+                        "http://zuulserver:5555/api/organization/v1/organizations/{organizationId}",
                         HttpMethod.GET,
                         null, Organization.class, organizationId);
 

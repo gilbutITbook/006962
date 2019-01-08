@@ -1,4 +1,4 @@
-package com.thoughtmechanix.organization.event.models;
+package com.thoughtmechanix.organization.events.models;
 
 public class OrganizationChangeModel{
     private String type;

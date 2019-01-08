@@ -27,14 +27,18 @@ public class UserContextFilter implements Filter {
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain)
             throws IOException, ServletException {
 
-        logger.debug("Entering the UserContextFilter");
+
+        logger.debug("Entering the UserContextFilter for the organization service");
         HttpServletRequest httpServletRequest = (HttpServletRequest) servletRequest;
+        logger.debug("I am entering the organization service id with auth token: ", httpServletRequest.getHeader("Authorization"));
+
+
         String correlationId = httpServletRequest.getHeader(UserContext.CORRELATION_ID);
         String userId = httpServletRequest.getHeader(UserContext.USER_ID);
         String authToken = httpServletRequest.getHeader(UserContext.AUTH_TOKEN);
         String orgId = httpServletRequest.getHeader(UserContext.ORG_ID);
 
-
+        logger.debug("***** I am entering the organization service id with correlation id: {}" ,correlationId);
         UserContext.setCorrelationId(correlationId);
         UserContext.setUserId(userId);
         UserContext.setAuthToken(authToken);

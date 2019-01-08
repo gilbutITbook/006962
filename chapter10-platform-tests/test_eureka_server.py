@@ -9,6 +9,7 @@ from httplib2 import Http
 class TestEurekaServer(unittest.TestCase):
 
     def call_eureka_service(self,serviceName):
+        # Open 8761 port from ECS security group
          targetUri = "http://{}:8761/eureka/apps/{}".format(containerIP,serviceName)
          http_obj = Http(".cache")
          (resp, content) = http_obj.request(
@@ -42,6 +43,6 @@ class TestEurekaServer(unittest.TestCase):
         self.assert_eureka_service("ZUULSERVICE")
 
 if __name__ == '__main__':
-    containerIP = os.getenv('CONTAINER_IP',"192.168.99.100")
+    containerIP = os.getenv('CONTAINER_IP',"13.125.174.58")
     print "Running eureka service platform tests against container ip: {}".format(containerIP)
     unittest.main()

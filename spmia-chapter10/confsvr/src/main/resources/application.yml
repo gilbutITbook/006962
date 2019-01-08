@@ -18,10 +18,11 @@ spring:
       discovery:
         enabled: true
       server:
-        encrypt.enabled: false
+        # encrypt.enabled property should be defined in bootstrap.yml
+        # encrypt.enabled: false
         git:
-          uri: https://github.com/klimtever/config-repo/
-          searchPaths: licensingservice,organizationservice,specialroutesservice,zuulservice
+          uri: https://github.com/klimtever/config-repo
+          searchPaths: licensingservice,organizationservice,specialroutesservice,zuulservice,authenticationservice
           username: native-cloud-apps
           password: 0ffended
 

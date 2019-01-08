@@ -2,19 +2,18 @@ spring:
   cloud:
     stream:
       bindings:
+        # input:
+        #   destination: orgChangeTopic
+        #   content-type: application/json
+        #   group: licensingGroup
         inboundOrgChanges:
           destination: orgChangeTopic
           content-type: application/json
           group: licensingGroup
+      kafka:
         binder:
-          zkNodes: localhost
-          brokers: localhost
-
-security:
-  oauth2:
-   resource:
-      userInfoUri: http://localhost:8901/auth/user
-
+          # zkNodes: localhost # no longer needed in 2.0
+          brokers: kafka
 eureka:
   instance:
     preferIpAddress: true

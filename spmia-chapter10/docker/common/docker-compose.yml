@@ -2,7 +2,7 @@ version: '2'
 services:
   eurekaserver:
      image:   dockerever/tmx-eurekasvr:${BUILD_NAME}
-     mem_limit: 1073741824
+#     mem_limit: 1073741824
      ports:
          - "8761:8761"
 
@@ -16,11 +16,12 @@ services:
          - "eurekaserver:eurekaserver"
       environment:
          EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
+         EUREKASERVER_PORT: "8761"
          ENCRYPT_KEY:       "IMSYMMETRIC"
 
   zuulserver:
       image: dockerever/tmx-zuulsvr:${BUILD_NAME}
-      mem_limit: 1073741824
+#      mem_limit: 1073741824
       ports:
         - "5555:5555"
       links:
@@ -31,31 +32,51 @@ services:
         SERVER_PORT: "5555"
         CONFIGSERVER_URI: "http://configserver:8888"
         EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
+        DATABASESERVER_PORT: "5432"
+        EUREKASERVER_PORT:   "8761"
+        CONFIGSERVER_PORT:   "8888"
+
+  database:
+    image: postgres:9.5
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=p0stgr@s
+      - POSTGRES_DB=eagle_eye_local
 
   licensingservice:
       image: dockerever/tmx-licensing-service:${BUILD_NAME}
-      mem_limit: 1073741824
+#      mem_limit: 1073741824
       ports:
         - "8080:8080"
       links:
         - "configserver:configserver"
         - "eurekaserver:eurekaserver"
         - "zuulserver:zuulserver"
-        - "kafkaserver:kafkaserver"
+        - "zookeeper:zookeeper"
+        - "kafka:kafka"
         - "authenticationservice:authenticationservice"
       environment:
-        PROFILE: "awsdev"
+        PROFILE: "default"
         SERVER_PORT: "8080"
+        ZOOKEEPER_PORT: "2181"
+        KAFKASERVER_PORT: "9092"
         CONFIGSERVER_URI: "http://configserver:8888"
         EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
-        KAFKASERVER_URI: "kafkaserver"
+        KAFKASERVER_URI: "kafka"
         ZKSERVER_URI: "zookeeper"
-        AUTHSERVER_URI:   "http://authenticationservice:8901/user"
+        AUTHSERVER_URI:   "http://authenticationservice:8901/auth/user"
         ENCRYPT_KEY:       "IMSYMMETRIC"
+        DATABASESERVER_PORT: "5432"
+        EUREKASERVER_PORT:   "8761"
+        CONFIGSERVER_PORT:   "8888"
+        ZUULSERVER_PORT:     "5555"
+        REDIS_PORT:          "6379"
 
   authenticationservice:
       image: dockerever/tmx-authentication-service:${BUILD_NAME}
-      mem_limit: 1073741824
+#      mem_limit: 1073741824
       ports:
         - "8901:8901"
       links:
@@ -63,51 +84,63 @@ services:
         - "eurekaserver:eurekaserver"
         - "zuulserver:zuulserver"
       environment:
-        PROFILE: "awsdev"
+        PROFILE: "default"
         SERVER_PORT: "8901"
+        EUREKASERVER_PORT:   "8761"
+        CONFIGSERVER_PORT:   "8888"
         CONFIGSERVER_URI: "http://configserver:8888"
         EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
         ENCRYPT_KEY:       "IMSYMMETRIC"
 
   organizationservice:
       image: dockerever/tmx-organization-service:${BUILD_NAME}
-      mem_limit: 1073741824
+#      mem_limit: 1073741824
       ports:
         - "8085:8085"
       links:
         - "configserver:configserver"
         - "eurekaserver:eurekaserver"
         - "zuulserver:zuulserver"
-        - "kafkaserver:kafkaserver"
+        - "zookeeper:zookeeper"
+        - "kafka:kafka"
         - "authenticationservice:authenticationservice"
       environment:
-        PROFILE: "awsdev"
+        PROFILE: "default"
         SERVER_PORT: "8085"
+        ZOOKEEPER_PORT: "2181"
+        KAFKASERVER_PORT: "9092"
         CONFIGSERVER_URI: "http://configserver:8888"
         EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
-        KAFKASERVER_URI: "kafkaserver"
-        ZKSERVER_URI: "kafkaserver"
-        AUTHSERVER_URI:   "http://authenticationservice:8901/user"
+        KAFKASERVER_URI: "kafka"
+        ZKSERVER_URI: "zookeeper"
+        AUTHSERVER_URI:   "http://authenticationservice:8901/auth/user"
+        DATABASESERVER_PORT: "5432"
+        EUREKASERVER_PORT:   "8761"
+        CONFIGSERVER_PORT:   "8888"
+        ZUULSERVER_PORT:     "5555"
         ENCRYPT_KEY:       "IMSYMMETRIC"
+
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
 
   zookeeper:
     image: wurstmeister/zookeeper
     container_name: zookeeper
     restart: always
     ports:
-      - 2181:2181
+      - "2181:2181"
 
-  kafkaserver:
+  kafka:
       image: wurstmeister/kafka
       container_name: kafka
       restart: always
-      mem_limit: 1073741824
+#      mem_limit: 1073741824
       ports:
-        - 9092:9092
-      depends_on:
-        - zookeeper
+        - "9092:9092"
       links:
-        - zookeeper:zookeeper
+        - "zookeeper:zookeeper"
       environment:
         KAFKA_ADVERTISED_HOST_NAME: kafka
         KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
